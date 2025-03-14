@@ -63,6 +63,9 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
         print("⏰ Looking for preferred hours...")
         hour_clicked = False
 
+        # Wait for previous hours to disappear
+        page.wait_for_selector('div.hour_item', state='detached', timeout=10000)  # waits for previous ones to disappear
+
         # Wait for hours to be loaded to avoid searching too early
         page.wait_for_selector('div.hour_item', timeout=10000)  # Wait up to 10 seconds
 
@@ -123,7 +126,7 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
         print("🟢 Trying to click the 'Reservar' button...")
         try:
             siguiente_button = page.locator('button.reserva_btn_terceary')
-            siguiente_button.click()
+            #siguiente_button.click()
             print("✅ Clicked 'Reservar' button successfully!")
         except Exception as e:
             print(f'❌ Error while clicking the "Reservar" button: {e}')
@@ -132,7 +135,7 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
         input("✅ Process completed. Press Enter to close the browser...")
 
         # Close browser
-        browser.close()
+        #browser.close()
 
 # Argument parsing
 if __name__ == "__main__":
