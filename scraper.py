@@ -135,7 +135,7 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
         input("✅ Process completed. Press Enter to close the browser...")
 
         # Close browser
-        #browser.close()
+        browser.close()
 
 # Argument parsing
 if __name__ == "__main__":
