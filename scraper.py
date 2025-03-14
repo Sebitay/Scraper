@@ -126,7 +126,7 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
         print("🟢 Trying to click the 'Reservar' button...")
         try:
             siguiente_button = page.locator('button.reserva_btn_terceary')
-            #siguiente_button.click()
+            siguiente_button.click()
             print("✅ Clicked 'Reservar' button successfully!")
         except Exception as e:
             print(f'❌ Error while clicking the "Reservar" button: {e}')
