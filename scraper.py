@@ -43,7 +43,7 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
             page.click('button:has-text("Ingresar")')
             print("✅ Login form submitted!")
 
-            page.wait_for_selector("text=Siguiente", timeout=8000)
+            page.wait_for_selector("text=Siguiente", timeout=20000)
             print("🎉 Logged in successfully!")
         except Exception as e:
             print(f"❌ Error during login: {e}")
