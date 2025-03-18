@@ -7,7 +7,7 @@ PASSWORD = "Seb@0811"
 
 def open_easycancha_with_dynamic_date_and_hours(day, hours):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)  # Change to True if you want headless mode
+        browser = p.chromium.launch(headless=False)  # Change to True if you want headless mode
         context = browser.new_context()
         page = context.new_page()
 
@@ -50,6 +50,7 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
 
         # Step 5: Click on date provided as argument
         print(f'🗓️ Looking for the date "{day}"...')
+
         try:
             date_element = page.locator(f'div.cds-day:has(span.cds-day-number:has-text("{day}"))')
             date_element.click()
@@ -126,7 +127,7 @@ def open_easycancha_with_dynamic_date_and_hours(day, hours):
         print("🟢 Trying to click the 'Reservar' button...")
         try:
             siguiente_button = page.locator('button.reserva_btn_terceary')
-            siguiente_button.click()
+            #siguiente_button.click()
             print("✅ Clicked 'Reservar' button successfully!")
         except Exception as e:
             print(f'❌ Error while clicking the "Reservar" button: {e}')
