@@ -7,7 +7,7 @@ PASSWORD = "Seb@0811"
 
 def open_easycancha_with_dynamic_date_and_hours(day, hours):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)  # Change to True if you want headless mode
+        browser = p.chromium.launch(headless=True)  # Change to True if you want headless mode
         context = browser.new_context()
         page = context.new_page()
 
